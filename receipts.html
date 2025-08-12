@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Receipts - Staypal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="images/slogo.png" alt="StayPal Logo" />
+    <span class="tagline">Township Meets Urban</span>
+  </div>
+  <ul class="navbar-menu">
+    <li><a href="index.html" class="nav-link home-link">Home</a></li>
+    <li><a href="listings.html" class="nav-link listings-link">Explore Listings</a></li>
+    <li><a href="safety.html" class="nav-link safety-link">Safety</a></li>
+    <li><a href="contact.html" class="nav-link contact-link">Contact</a></li>
+    <li><a href="receipts.html" class="nav-link receipts-link">Receipts</a></li>
+    <li><a href="landlord_receipts.html" class="nav-link landlord-link">Landlord Receipts</a></li>
+  </ul>
+</nav>
+
+
+
+  <!-- Receipts Section -->
+  <section class="receipt-dashboard">
+    <h2>Your Rent Receipts</h2>
+    <div class="receipt-list">
+      <div class="receipt-card">
+        <p><strong>Tenant:</strong> Kamva A. Mwanda</p>
+        <p><strong>Property:</strong> 52 Ilitha Park, Khayelitsha</p>
+        <p><strong>Amount:</strong> R3,500</p>
+        <p><strong>Date:</strong> 07 August 2025</p>
+        <p><strong>Landlord Reg:</strong> SP-LD897654 <span class="verified">✔️ Verified</span></p>
+
+        <button class="btn download-btn">Download PDF</button>
+      </div>
+      <div class="receipt-card">
+        <p><strong>Tenant:</strong> Kamva A. Mwanda</p>
+        <p><strong>Property:</strong> 52 Ilitha Park, Khayelitsha</p>
+        <p><strong>Amount:</strong> R3,500</p>
+        <p><strong>Date:</strong> 07 July 2025</p>
+      <p><strong>Landlord Reg:</strong> SP-LD897654 <span class="verified">✔️ Verified</span></p>
+        <button class="btn download-btn">Download PDF</button>
+      </div>
+      <!-- Add more if needed -->
+    </div>
+  </section>
+
+  <script>
+  // Highlight current nav link
+  const links = document.querySelectorAll('.nav-link');
+  const currentPage = window.location.pathname.split('/').pop();
+
+  links.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 Staypal. A Vision by Kamva Asenathi Mwanda.
+  </footer>
+</body>
+</html>

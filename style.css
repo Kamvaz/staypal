@@ -1,0 +1,545 @@
+/* === GLOBAL RESET & BASE STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background-color: #0B6E4F; /* Deep township green */
+  color: white;
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  flex-wrap: wrap;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 60px;
+  margin-right: 10px;
+}
+
+.logo-text,
+.tagline {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* Navbar menu - unordered list for consistent structure */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-menu li a,
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.navbar-menu li a:hover,
+.nav a:hover {
+  color: #F7931E; /* Staypal orange */
+  background-color: rgba(247, 147, 30, 0.15);
+}
+
+.navbar-menu li a.active,
+.nav a.active {
+  color: #F7931E;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* === BUTTONS === */
+.btn {
+  background-color: #F7931E;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #d77e1a;
+  outline: none;
+}
+
+/* Modifier for download buttons */
+.btn.download-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+/* === HERO SECTION === */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: url('images/bg1.jpg') no-repeat center center/cover;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* === FEATURES SECTION === */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  background: white;
+}
+
+.feature-card {
+  background: #eeeeee;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* === FILTERS SECTION === */
+.filters {
+  background-color: #f4f4f4;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.filters h2 {
+  margin-bottom: 20px;
+  color: #1A1A1A;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-group select,
+.filter-group input[type="checkbox"] {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* === LISTINGS SECTION === */
+.listings, .listings-page {
+  padding: 40px 20px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.listings h2,
+.listings-page h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.listing-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+}
+
+.listing-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.listing-info {
+  padding: 15px;
+}
+
+.listing-info h2, .listing-info h3 {
+  margin: 0 0 8px 0;
+  color: #0B6E4F;
+}
+
+.listing-info p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+/* === RECEIPT DASHBOARD === */
+.receipt-dashboard,
+.landlord-receipts {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.receipt-dashboard h2,
+.landlord-receipts h2 {
+  color: #222;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.receipt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.receipt-card {
+  background: white;
+  padding: 20px;
+  border-left: 5px solid #4CAF50;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: left;
+  position: relative;
+}
+
+.receipt-card p {
+  margin: 8px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.verified {
+  color: #4CAF50;
+  font-weight: bold;
+  margin-left: 8px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+/* Download buttons inside receipts */
+.download-btn {
+  margin-top: 15px;
+  padding: 10px 16px;
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover,
+.download-btn:focus {
+  background-color: #0056b3;
+  outline: none;
+}
+
+/* === MODAL === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content input,
+.modal-content textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.modal-content button {
+  padding: 10px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover,
+.modal-content button:focus {
+  background-color: #1558b0;
+  outline: none;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === SAFETY PAGE === */
+.safety-page {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  color: #222;
+}
+
+.safety-page h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.safety-page p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.safety-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.safety-card {
+  background: #f0f8f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.08);
+  color: #0B6E4F;
+  font-weight: 600;
+  text-align: left;
+}
+
+.safety-card h2 {
+  margin-bottom: 10px;
+}
+
+/* === CONTACT PAGE === */
+.contact-section {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  color: #222;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.contact-form-container {
+  margin-bottom: 30px;
+}
+
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form-container label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 14px;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.contact-form-container button {
+  max-width: 150px;
+  margin-top: 10px;
+  align-self: center;
+}
+
+/* === FOOTER === */
+.footer {
+  background-color: #263238;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 4rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar-menu {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .listing-card img {
+    height: 140px;
+  }
+
+  .safety-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo img {
+    height: 50px;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn,
+  .btn.download-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+  }
+}
+
+/* Active link style for current page */
+.nav-link.active {
+  color: orange; /* highlight current page */
+  font-weight: bold;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Available Listings - StayPal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="images/slogo.png" alt="StayPal Logo" />
+    <span class="tagline">Township Meets Urban</span>
+  </div>
+  <ul class="navbar-menu">
+    <li><a href="index.html" class="nav-link home-link">Home</a></li>
+    <li><a href="listings.html" class="nav-link listings-link">Explore Listings</a></li>
+    <li><a href="safety.html" class="nav-link safety-link">Safety</a></li>
+    <li><a href="contact.html" class="nav-link contact-link">Contact</a></li>
+    <li><a href="receipts.html" class="nav-link receipts-link">Receipts</a></li>
+    <li><a href="landlord_receipts.html" class="nav-link landlord-link">Landlord Receipts</a></li>
+  </ul>
+</nav>
+
+  <!-- Listings Section -->
+  <section class="listings-page">
+    <h1>Explore Verified Rental Listings</h1>
+    <p>Browse properties across townships and cities — all StayPal Verified.</p>
+
+    <div class="listing-grid">
+
+      <div class="listing-card">
+        <img src="images/sc1.jpg" alt="Apartment 1" />
+        <div class="listing-info">
+          <h2>R3,500 / month</h2>
+          <p>🏠 2-Bedroom Apartment</p>
+          <p>📍 Site C, Khayelitsha</p>
+          <p>📐 45 m²</p>
+        </div>
+      </div>
+
+      <div class="listing-card">
+        <img src="images/ls3.jpg" alt="Apartment 2" />
+        <div class="listing-info">
+          <h2>R4,800 / month</h2>
+          <p>🏠 Bachelor Flat</p>
+          <p>📍 Gugulethu</p>
+          <p>📐 38 m²</p>
+        </div>
+      </div>
+
+      <div class="listing-card">
+        <img src="images/sr1.jpg" alt="Apartment 3" />
+        <div class="listing-info">
+          <h2>R5,200 / month</h2>
+          <p>🏠 Urban Loft</p>
+          <p>📍 Salt River, Cape Town</p>
+          <p>📐 50 m²</p>
+        </div>
+      </div>
+
+      <!-- More cards can be added here -->
+
+    </div>
+  </section>
+
+  <script>
+  // Highlight current nav link
+  const links = document.querySelectorAll('.nav-link');
+  const currentPage = window.location.pathname.split('/').pop();
+
+  links.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
+  <footer class="footer">
+    &copy; 2025 StayPal. Verified Homes. Safe Communities.
+  </footer>
+
+</body>
+</html>

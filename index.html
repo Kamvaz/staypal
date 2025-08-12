@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staypal - Township Meets Urban</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="images/slogo.png" alt="StayPal Logo" />
+    <span class="tagline">Township Meets Urban</span>
+  </div>
+  <ul class="navbar-menu">
+    <li><a href="index.html" class="nav-link home-link">Home</a></li>
+    <li><a href="listings.html" class="nav-link listings-link">Explore Listings</a></li>
+    <li><a href="safety.html" class="nav-link safety-link">Safety</a></li>
+    <li><a href="contact.html" class="nav-link contact-link">Contact</a></li>
+    <li><a href="receipts.html" class="nav-link receipts-link">Receipts</a></li>
+    <li><a href="landlord_receipts.html" class="nav-link landlord-link">Landlord Receipts</a></li>
+  </ul>
+</nav>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Find Township & Urban Rentals</h1>
+    <p>Affordable verified homes. Built with community values. Powered by local trust.</p>
+    <a href="listings.html" class="btn">Explore Listings</a>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>Staypal Verified</h3>
+      <p>All properties undergo verification for safety and legal compliance.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Multilingual Support</h3>
+      <p>English & isiXhosa interfaces for accessibility and inclusivity.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Digital Receipts</h3>
+      <p>View and export rental receipts directly from your dashboard.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Furniture Rentals</h3>
+      <p>Subscribe to beds, fridges, and more with door-to-door delivery.</p>
+    </div>
+  </section>
+
+  <!-- 🔍 Filter Section -->
+  <section class="filters">
+    <h2>Filter Listings</h2>
+    <div class="filter-group">
+      <select>
+        <option value="">Location</option>
+        <option value="khayelitsha">Khayelitsha</option>
+        <option value="gugulethu">Gugulethu</option>
+        <option value="langa">Langa</option>
+      </select>
+      <select>
+        <option value="">Price</option>
+        <option value="0-2000">Under R2,000</option>
+        <option value="2000-4000">R2,000–R4,000</option>
+        <option value="4000+">Above R4,000</option>
+      </select>
+      <select>
+        <option value="">Size (m²)</option>
+        <option value="small">Below 30m²</option>
+        <option value="medium">30–50m²</option>
+        <option value="large">50m²+</option>
+      </select>
+      <label><input type="checkbox" /> Staypal Verified Only</label>
+      <button class="btn">Apply Filters</button>
+    </div>
+  </section>
+
+  <!-- 🏠 Listings Grid -->
+  <section class="listings">
+    <h2>Featured Listings</h2>
+    <div class="listing-grid">
+      <div class="listing-card">
+        <img src="images/image1.webp" alt="Listing 1">
+        <div class="listing-info">
+          <h3>Ilitha Park</h3>
+          <p>R3,500/month · 40m²</p>
+          <p>Neat 1-bedroom flat with bathroom near public transport and schools.</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="images/image2.webp" alt="Listing 2">
+        <div class="listing-info">
+          <h3>Khayelitsha</h3>
+          <p>R2,800/month · 32m²</p>
+          <p>3 bedroom House at Ntlazane main road, nearby Khayelitsha Mall and train station.</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="images/image3.jpg" alt="Listing 3">
+        <div class="listing-info">
+          <h3>Lower Crossroads</h3>
+          <p>R1,200/month</p>
+          <p>Nantso ihoki erentisayo e Lower, inomhlaba ku safe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📄 RECEIPT SECTION -->
+  <section class="receipt-section">
+    <div class="receipt-card">
+      <h2>Rent Payment Receipt</h2>
+      <p><strong>Tenant:</strong> Kamva A. Mwanda</p>
+      <p><strong>Property:</strong> 52 Ilitha Park, Khayelitsha</p>
+      <p><strong>Amount:</strong> R3,500</p>
+      <p><strong>Date:</strong> 07 August 2025</p>
+      <p><strong>Landlord Reg:</strong> SP-LD897654</p>
+      <button id="downloadReceipt">Download PDF</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 Staypal. A Vision by Kamva Asenathi Mwanda.
+  </footer>
+
+  <!-- 🔐 Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Login</h2>
+      <form>
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 📝 Register Modal -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('registerModal')">&times;</span>
+      <h2>Register</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Create Password" required />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Script -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    window.onclick = function(event) {
+      ['loginModal', 'registerModal'].forEach(id => {
+        const modal = document.getElementById(id);
+        if (event.target === modal) modal.style.display = 'none';
+      });
+    }
+  </script>
+
+  <script>
+  // Highlight current nav link
+  const links = document.querySelectorAll('.nav-link');
+  const currentPage = window.location.pathname.split('/').pop();
+
+  links.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+  </script>
+</body>
+</html>

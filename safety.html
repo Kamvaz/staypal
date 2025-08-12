@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Safety & Accountability - StayPal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="images/slogo.png" alt="StayPal Logo" />
+    <span class="tagline">Township Meets Urban</span>
+  </div>
+  <ul class="navbar-menu">
+    <li><a href="index.html" class="nav-link home-link">Home</a></li>
+    <li><a href="listings.html" class="nav-link listings-link">Explore Listings</a></li>
+    <li><a href="safety.html" class="nav-link safety-link">Safety</a></li>
+    <li><a href="contact.html" class="nav-link contact-link">Contact</a></li>
+    <li><a href="receipts.html" class="nav-link receipts-link">Receipts</a></li>
+    <li><a href="landlord_receipts.html" class="nav-link landlord-link">Landlord Receipts</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Safety Section -->
+  <section class="safety-page">
+    <h1>Community Safety & Legal Housing Standards</h1>
+
+    <p>
+      At StayPal, your safety is not just a feature — it's a foundation. Founded by a former police officer, our platform is built to reflect accountability, lawful housing, and protection for both tenants and landlords.
+    </p>
+
+    <div class="safety-columns">
+      <div class="safety-card">
+        <h2>✔️ Staypal Verified Listings</h2>
+        <p>
+          All verified listings carry a registered landlord number or location watermark on images to prevent scams and duplication.
+        </p>
+      </div>
+
+      <div class="safety-card">
+        <h2>📄 Legal Compliance</h2>
+        <p>
+          We ensure that all property uploads comply with local bylaws, zoning, and rental conditions as defined by South African law.
+        </p>
+      </div>
+
+      <div class="safety-card">
+        <h2>📸 Screenshot Protection</h2>
+        <p>
+          StayPal blocks screenshots and watermark images to protect our landlords' property visuals from being reused without consent.
+        </p>
+      </div>
+
+      <div class="safety-card">
+        <h2>🛡️ Community Reporting</h2>
+        <p>
+          Tenants can report suspicious listings or landlord misconduct directly via our in-app report system linked to local authorities.
+        </p>
+      </div>
+
+      <div class="safety-card">
+        <h2>👮 Liaison with Law Enforcement</h2>
+        <p>
+          We make it easy to coordinate with recognized and authorized law enforcement services to resolve safety disputes and verify legitimacy.
+        </p>
+      </div>
+
+      <div class="safety-card">
+        <h2>🔐 Secure Receipts & Records</h2>
+        <p>
+          All payments generate official receipts with tenant and landlord info, including registration IDs and date-stamped proofs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  // Highlight current nav link
+  const links = document.querySelectorAll('.nav-link');
+  const currentPage = window.location.pathname.split('/').pop();
+
+  links.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 StayPal. Built with integrity and lawfulness.
+  </footer>
+</body>
+</html>

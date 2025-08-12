@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landlord Receipt Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="images/slogo.png" alt="StayPal Logo" />
+    <span class="tagline">Township Meets Urban</span>
+  </div>
+  <ul class="navbar-menu">
+    <li><a href="index.html" class="nav-link home-link">Home</a></li>
+    <li><a href="listings.html" class="nav-link listings-link">Explore Listings</a></li>
+    <li><a href="safety.html" class="nav-link safety-link">Safety</a></li>
+    <li><a href="contact.html" class="nav-link contact-link">Contact</a></li>
+    <li><a href="receipts.html" class="nav-link receipts-link">Receipts</a></li>
+    <li><a href="landlord_receipts.html" class="nav-link landlord-link">Landlord Receipts</a></li>
+  </ul>
+</nav>
+
+
+
+  <!-- Receipt Export Section -->
+  <section class="receipt-dashboard landlord-receipts">
+    <h2>Landlord Receipt Records</h2>
+
+    <!-- Filters -->
+    <div class="filters">
+      <h3>Filter by:</h3>
+      <div class="filter-group">
+        <label for="month-select">Month:</label>
+        <select id="month-select">
+          <option value="all">All</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+        </select>
+
+        <label for="tenant-select">Tenant:</label>
+        <select id="tenant-select">
+          <option value="all">All</option>
+          <option value="mwanga">Mr Mwanga</option>
+          <option value="ndlovu">Ms Ndlovu</option>
+        </select>
+
+        <button class="btn">Apply</button>
+      </div>
+    </div>
+
+    <!-- Export Buttons -->
+    <div class="export-buttons">
+      <button class="btn download-btn">📄 Export PDF</button>
+      <button class="btn download-btn">📥 Export CSV</button>
+    </div>
+
+    <!-- Receipts Table -->
+    <div class="receipt-list">
+      <div class="receipt-card">
+        <p><strong>Tenant:</strong> Mr Mwanga</p>
+        <p><strong>Amount Paid:</strong> R 4,200</p>
+        <p><strong>Date:</strong> 2025-08-01</p>
+        <p><strong>Property:</strong> 12 Mamba St, Johannesburg</p>
+        <p><strong>Landlord Reg:</strong> SP-LD897654 <span class="verified">✔️ Verified</span></p>
+      </div>
+
+      <div class="receipt-card">
+        <p><strong>Tenant:</strong> Ms Ndlovu</p>
+        <p><strong>Amount Paid:</strong> R 5,100</p>
+        <p><strong>Date:</strong> 2025-08-01</p>
+        <p><strong>Property:</strong> 88 Kwena Rd, Pretoria</p>
+        <p><strong>Landlord Reg:</strong> SP-LD897654 <span class="verified">✔️ Verified</span></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  // Highlight current nav link
+  const links = document.querySelectorAll('.nav-link');
+  const currentPage = window.location.pathname.split('/').pop();
+
+  links.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 StayPal. All rights reserved.
+  </footer>
+</body>
+</html>
