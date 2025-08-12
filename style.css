@@ -12,70 +12,99 @@ body {
   line-height: 1.6;
 }
 
+/* === COLOR VARIABLES === */
+:root {
+  --staypal-green: #0B6E4F;
+  --staypal-orange: #F7931E;
+  --staypal-orange-light: rgba(247, 147, 30, 0.15);
+}
+
 /* === NAVBAR === */
 .navbar {
-  background-color: #0B6E4F; /* Deep township green */
+  position: sticky;
+  top: 0;
+  background-color: var(--staypal-green);
   color: white;
-  padding: 12px 40px;
+  padding: 12px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  flex-wrap: wrap;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  z-index: 10000;
+  flex-wrap: nowrap;
 }
 
 .navbar-logo {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .navbar-logo img {
   height: 60px;
-  margin-right: 10px;
+  margin-right: 0; /* Removed margin-right since gap handles spacing */
 }
 
 .logo-text,
 .tagline {
-  font-size: 20px;
-  font-weight: bold;
   color: white;
   letter-spacing: 1px;
+  user-select: none;
 }
 
-/* Navbar menu - unordered list for consistent structure */
+.logo-text {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.tagline {
+  font-weight: 400;
+  font-size: 14px;
+  color: #cde7d2;
+  letter-spacing: 0.05em;
+}
+
+/* Navbar menu - unordered list */
 .navbar-menu {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-menu li a,
-.nav a {
+.nav-link {
   color: white;
-  text-decoration: none;
   font-weight: 600;
   font-size: 16px;
   padding: 8px 12px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  border-radius: 4px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .navbar-menu li a:hover,
-.nav a:hover {
-  color: #F7931E; /* Staypal orange */
-  background-color: rgba(247, 147, 30, 0.15);
+.navbar-menu li a:focus,
+.nav-link:hover,
+.nav-link:focus-visible {
+  background-color: var(--staypal-orange-light);
+  color: var(--staypal-orange);
+  outline: none;
 }
 
 .navbar-menu li a.active,
-.nav a.active {
-  color: #F7931E;
+.nav-link.active {
+  color: var(--staypal-orange);
   font-weight: 700;
   text-decoration: underline;
 }
 
 /* === BUTTONS === */
-.btn {
-  background-color: #F7931E;
+.btn,
+.btn-primary {
+  background-color: var(--staypal-orange);
   color: white;
   padding: 10px 25px;
   border: none;
@@ -83,40 +112,71 @@ body {
   font-size: 16px;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
+  text-align: center;
 }
 
 .btn:hover,
-.btn:focus {
+.btn:focus,
+.btn-primary:hover,
+.btn-primary:focus-visible {
   background-color: #d77e1a;
   outline: none;
+  box-shadow: 0 6px 18px rgba(215,126,26,0.9);
 }
 
-/* Modifier for download buttons */
 .btn.download-btn {
   padding: 12px 24px;
   font-size: 16px;
 }
 
+.btn-primary {
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.07em;
+  box-shadow: 0 4px 12px rgba(247,147,30,0.6);
+}
+
 /* === HERO SECTION === */
 .hero {
-  text-align: center;
-  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
   background: url('images/bg1.jpg') no-repeat center center/cover;
+  padding: 140px 20px 100px;
   color: white;
+  text-align: center;
+  user-select: none;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 110, 79, 0.6); /* Overlay for better contrast */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .hero h1 {
   font-size: 48px;
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.75);
 }
 
 .hero p {
   font-size: 20px;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  margin-bottom: 32px;
+  font-weight: 500;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
 
 /* === FEATURES SECTION === */
@@ -216,9 +276,10 @@ body {
   padding: 15px;
 }
 
-.listing-info h2, .listing-info h3 {
+.listing-info h2,
+.listing-info h3 {
   margin: 0 0 8px 0;
-  color: #0B6E4F;
+  color: var(--staypal-green);
 }
 
 .listing-info p {
@@ -412,7 +473,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 1px 1px 8px rgba(0,0,0,0.08);
-  color: #0B6E4F;
+  color: var(--staypal-green);
   font-weight: 600;
   text-align: left;
 }
@@ -494,11 +555,6 @@ body {
     padding: 10px 20px;
   }
 
-  .navbar-menu {
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
   .hero h1 {
     font-size: 36px;
   }
@@ -511,10 +567,7 @@ body {
     height: 140px;
   }
 
-  .safety-columns {
-    grid-template-columns: 1fr;
-  }
-
+  .safety-columns,
   .features {
     grid-template-columns: 1fr;
   }
@@ -526,20 +579,57 @@ body {
   }
 
   .navbar-menu {
+    display: none; /* Hide menu by default on small screens */
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background: var(--staypal-green);
+    border-radius: 10px;
     flex-direction: column;
-    gap: 8px;
+    gap: 0;
+    width: 180px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+    z-index: 10001;
   }
 
-  .btn,
-  .btn.download-btn {
+  .navbar-menu.active {
+    display: flex; /* Show menu when toggled */
+  }
+
+  .navbar-menu li {
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .btn-primary {
+    position: relative;
+    z-index: 10000; /* lower than hamburger */
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10002; /* above menu */
+    position: relative;
+  }
+
+  /* The 3 bars inside the button */
+  .nav-toggle span {
+    display: block;
+    height: 3px;
     width: 100%;
-    padding: 14px;
-    font-size: 18px;
+    background: white;
+    border-radius: 2px;
   }
-}
 
-/* Active link style for current page */
-.nav-link.active {
-  color: orange; /* highlight current page */
-  font-weight: bold;
+  /* spacing between bars */
+  .nav-toggle span + span {
+    margin-top: 5px;
+  }
 }

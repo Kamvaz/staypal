@@ -8,29 +8,38 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar">
+<header class="navbar">
   <div class="navbar-logo">
-    <img src="images/slogo.png" alt="StayPal Logo" />
-    <span class="tagline">Township Meets Urban</span>
+    <img src="images/slogo.png" alt="Staypal Logo" />
+    <div class="logo-text">
+      Staypal<br /><span class="tagline">Township Meets Urban</span>
+    </div>
   </div>
-  <ul class="navbar-menu">
-    <li><a href="index.html" class="nav-link home-link">Home</a></li>
-    <li><a href="listings.html" class="nav-link listings-link">Explore Listings</a></li>
-    <li><a href="safety.html" class="nav-link safety-link">Safety</a></li>
-    <li><a href="contact.html" class="nav-link contact-link">Contact</a></li>
-    <li><a href="receipts.html" class="nav-link receipts-link">Receipts</a></li>
-    <li><a href="landlord_receipts.html" class="nav-link landlord-link">Landlord Receipts</a></li>
-  </ul>
-</nav>
+  <nav>
+    <ul class="navbar-menu">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="listings.html" class="nav-link">Listings</a></li>
+      <li><a href="safety.html" class="nav-link">Safety</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+  <a href="signup.html" class="btn btn-primary">Get Started</a>
 
-
-
+  <!-- Hamburger menu toggle for mobile -->
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Find Township & Urban Rentals</h1>
+  <div class="hero-content">
+    <h1>Your Next Home Awaits</h1>
     <p>Affordable verified homes. Built with community values. Powered by local trust.</p>
-    <a href="listings.html" class="btn">Explore Listings</a>
-  </section>
+    <a href="listings.html" class="btn btn-primary">Browse Listings</a>
+  </div>
+</section>
 
   <!-- Features Section -->
   <section class="features">
@@ -169,18 +178,30 @@
         if (event.target === modal) modal.style.display = 'none';
       });
     }
-  </script>
 
-  <script>
-  // Highlight current nav link
-  const links = document.querySelectorAll('.nav-link');
-  const currentPage = window.location.pathname.split('/').pop();
+// Select the toggle button and the navbar menu
+const navToggle = document.querySelector('.nav-toggle');
+const navbarMenu = document.querySelector('.navbar-menu');
 
-  links.forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
-      link.classList.add('active');
-    }
-  });
+navToggle.addEventListener('click', () => {
+  // Toggle a class to show/hide the menu
+  navbarMenu.classList.toggle('active');
+  
+  // Optional: toggle aria-expanded for accessibility
+  const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+  navToggle.setAttribute('aria-expanded', !expanded);
+});
+
+// Highlight current nav link
+const links = document.querySelectorAll('.nav-link');
+const currentPage = window.location.pathname.split('/').pop();
+
+links.forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
+
   </script>
 </body>
 </html>

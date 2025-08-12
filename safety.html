@@ -9,21 +9,30 @@
 <body>
 
   <!-- Navbar -->
-<nav class="navbar">
+<header class="navbar">
   <div class="navbar-logo">
-    <img src="images/slogo.png" alt="StayPal Logo" />
-    <span class="tagline">Township Meets Urban</span>
+    <img src="images/slogo.png" alt="Staypal Logo" />
+    <div class="logo-text">
+      Staypal<br /><span class="tagline">Township Meets Urban</span>
+    </div>
   </div>
-  <ul class="navbar-menu">
-    <li><a href="index.html" class="nav-link home-link">Home</a></li>
-    <li><a href="listings.html" class="nav-link listings-link">Explore Listings</a></li>
-    <li><a href="safety.html" class="nav-link safety-link">Safety</a></li>
-    <li><a href="contact.html" class="nav-link contact-link">Contact</a></li>
-    <li><a href="receipts.html" class="nav-link receipts-link">Receipts</a></li>
-    <li><a href="landlord_receipts.html" class="nav-link landlord-link">Landlord Receipts</a></li>
-  </ul>
-</nav>
+  <nav>
+    <ul class="navbar-menu">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="listings.html" class="nav-link">Listings</a></li>
+      <li><a href="safety.html" class="nav-link">Safety</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+  <a href="signup.html" class="btn btn-primary">Get Started</a>
 
+  <!-- Hamburger menu toggle for mobile -->
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
 
   <!-- Safety Section -->
   <section class="safety-page">
@@ -89,7 +98,6 @@
     }
   });
 </script>
-
 
   <!-- Footer -->
   <footer class="footer">
